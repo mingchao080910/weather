@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <title>Weather in China</title>
+  <script src="./js/d3.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0px
+    }
+
+    .page1 {
+      width:99vw;
+      height: 99vh;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-items: center;
+      justify-items: center;
+      margin: 0px;
+    }
+
+    .button1 img,
+    .button2 img {
+      width: 40vw;
+      height: 40vh;
+    }
+
+    body {
+      background-color: rgb(245, 245, 245);
+      color: rgb(49, 49, 45);
+      margin: 0
+    }
+
+
+    h1 {
+      text-align: center;
+      margin: 0px;
+    }
+
+    select {
+      width: 30%;
+      display: inline-block;
+      border: 2px solid rgb(0, 26, 255);
+      border-radius: 5px;
+
+      padding: 12px 15px;
+    }
+
+    .page2 {
+      margin: 0px;
+      width: 99vw;
+      height: 99vh;
+      display: grid;
+      grid-template-rows: 40% 60%;
+      align-items: center;
+      justify-items: center;
+    }
+
+
+
+    .box {
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(7, 14%);
+      margin: 30px;
+      width: 830px;
+      height: 300px;
+      background-color: rgb(0, 3, 209);
+      border-radius: 10px;
+    }
+
+    .day {
+      text-align: center;
+      padding-top: 5px;
+      width: 90px;
+      height: 260px;
+      margin: 14px;
+      background-color: white;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .temperature {
+      text-align: center;
+      margin: 12px;
+      font-size: 25px;
+      font-weight: normal;
+    }
+
+    .extra {
+      text-align: left;
+      padding-left: 10px;
+      font-size: 12px;
+      font-weight: normal;
+      height: 80px;
+    }
+    text{
+      fill: gray;
+    }
+    h1,h2,div{
+      color:#303030
+    }
+    .main{
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div style="position: absolute;top: 2vh;left: 40vw; ;">
+    <img src="./img/3.png" alt="" srcset=""  style="height:30vh;">
+  </div>
+  <div style="position: absolute;bottom: 2vh;right: 5vw; ;">
+    <p>If you want to know
+      the weather in the 
+      future.
+      </p>
+    <img src="./img/2.png" alt="" srcset=""  style="height:30vh;">
+  </div>
+
+  <div style="position: absolute;bottom: 2vh;left: 5vw; ;">
+   <p>
+    If you want to do something based
+    on the weather today.
+   
+   </p>
+    <img src="./img/left.png" alt="" srcset=""  style="height:30vh;">
+  </div>
+  <div class="main">
+    <!-- page1 -->
+    <section class="page1">
+      <div class="button1">
+        <img src="./img/按钮1.png" alt="" srcset="" class="button1">
+      </div>
+      <div class="button2">
+        <img src="./img/按钮2.png" alt="" srcset="" class="button2">
+      </div>
+    </section>
+
+    <!-- page2 -->
+
+    <section class="page2">
+      <div class="title"
+        style=" width: 100vw; display: grid;grid-template-columns:10% 80% 10% ;grid-template-rows: repeat(4,1fr); justify-items: center;align-items: center;">
+
+
+        <h1 style="grid-column:2/3 ;">Weather Dashboard</h1>
+        <div class="goback" style="grid-column: 3/4;">
+          <img src="./img/goback.png" alt="" srcset="">
+        </div>
+        <h1 style="grid-area: 2/2/3/3;width: 50vw;">
+          <select name="cities" id="cities">
+            <option value="Beijing">Beijing</option>
+            <option value="Shanghai">Shanghai</option>
+            <option value="Guangzhou">Guangzhou</option>
+            <option value="Hangzhou">Guangzhou</option>
+            <option value="Tianjin">Tianjin</option>
+          </select>
+        </h1>
+        <h2 class="cityName" style="grid-area: 3/2/4/3;"> Beijing</h2>
+        <h2 class="date" style="grid-area: 4/2/5/3;"> 2020-4-10</h2>
+
+      </div>
+
+      <div id="chart" style="align-self:flex-start;"> </div>
+
+    </section>
+
+
+  </div>
+
+  <script src="./js/index.js" type="module"></script>
+</body>
+
+
+</html>
