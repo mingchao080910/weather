@@ -409,6 +409,7 @@ d3.select("#cities").on("change", async (e) => {
 
 async function getData(city) {
   let url2 = `https://api.qweather.com/v7/weather/7d?location=${city}&key=d27aefe94c044c64be6b119fde6d57b9&lang=en`;
+  
   weatherdata = await d3.json(url2);
   weatherdata = weatherdata.daily;
   return weatherdata;
